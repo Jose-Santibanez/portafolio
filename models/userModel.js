@@ -6,4 +6,8 @@ const allUsers = async() =>{
     return rows[0]
 }
 
+const userById = async()=>{
+    
+}
+
 export const userModel = {allUsers}

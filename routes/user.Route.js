@@ -4,16 +4,16 @@ import { Router } from "express";
 
 const router = Router();
 
-router.get("/",userController.findAllusers)
+router.get("/",userController.findAllUsers)
 
 // GET
 
     // Obtener Información de perfil del usuario
-router.get(`/usuarios{id}`,)
+router.get(`/usuarios/:id`,)
     // Lista de proyectos del porfolio
 router.get('/proyectos',)
     // Obteniendo el detalle de un proyecto espefico
-router.get('/proyectos{id}',)
+router.get('/proyectos/:id',)
     // Lista todas las habilidaddes del dev
 router.get('/habilidades',)
     // Lista la experiencia laboral del desarrollador

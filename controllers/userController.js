@@ -13,4 +13,5 @@ const findAllusers = async(req, res)=>{
     }
 }
 
-export const userController = {findAllusers,}
+
+export const userController = {findAllUsers,findUserById}
