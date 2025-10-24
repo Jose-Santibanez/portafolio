@@ -15,7 +15,7 @@ router.get('/usuario/:id',userController.userById)
     // Lista de proyectos del porfolio
 router.get('/proyectos',projectController.allProject) 
     // Obteniendo el detalle de un proyecto espefico
-/* router.get('/proyectos/:id',) */
+router.get('/proyecto/:id',projectController.projectById) 
     // Lista todas las habilidaddes del dev
 /* router.get('/habilidades',) */
     // Lista la experiencia laboral del desarrollador
