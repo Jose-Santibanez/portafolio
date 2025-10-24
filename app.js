@@ -1,18 +1,16 @@
 import express from "express";
 import cors from "cors";
-import 'dotenv/config'
-import userRoute from './routes/user.Route.js'
-import { userModel } from './models/userModel.js'
+import "dotenv/config";
+import userRoute from "./routes/user.Route.js";
+
 
 const PORT = process.env.PORT || 3000;
 const app = express();
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
- app.use('/api',userRoute) 
+app.use("/api", userRoute);
 
-
-app.listen(PORT, ()=>{
-    console.log(`servidor encendido en el puerto ${PORT}`)
-})
-
+app.listen(PORT, () => {
+  console.log(`servidor encendido en el puerto ${PORT}`);
+});
