@@ -1,6 +1,6 @@
 import { pool } from '../database/connection.js'
 
-const allUsers = async() =>{
+const findAllUsers = async() =>{
     const query = 'select * from usuarios'
     const {rows} = await pool.query(query);
     return rows[0]
@@ -15,4 +15,4 @@ const findUserById = async(id)=>{
     return rows[0]
 }
 
-export const userModel = {allUsers, findUserById}
+export const userModel = {findAllUsers, findUserById}

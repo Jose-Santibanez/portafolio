@@ -1,6 +1,6 @@
 import { userModel } from "../models/user.Model.js";
 
-const findAllUsers = async (req, res) => {
+const allUsers = async (req, res) => {
   try {
     const users = await userModel.allUsers();
     if (!users) {
@@ -25,8 +25,9 @@ const userById = async (req, res) => {
         }
         return res.json(user);
     } catch (e) {
-        return res.status(500).json({ e });
+        console.log(e)
+        return res.status(500).json({ message:'Error interno del servidor' });
     }
 };
 
-export const userController = { findAllUsers, userById };
+export const userController = { allUsers, userById };

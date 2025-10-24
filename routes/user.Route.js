@@ -4,14 +4,14 @@ import { Router } from "express";
 
 const router = Router();
 
-router.get("/",userController.findAllUsers)
+router.get("/",userController.allUsers)
 
 // GET
 
     // Obtener Información de perfil del usuario
 router.get('/usuario/:id',userController.userById)
     // Lista de proyectos del porfolio
-/* router.get('/proyectos',) */
+router.get('/proyectos',) 
     // Obteniendo el detalle de un proyecto espefico
 /* router.get('/proyectos/:id',) */
     // Lista todas las habilidaddes del dev
