@@ -1,7 +1,6 @@
-import { userController } from "../controllers/user.Controller.js";
-
+import { userController } from "../controllers/user.controller.js";
 import { projectController } from "../controllers/project.controller.js"; 
-
+import {skillsController} from '../controllers/skills.controller.js'
 import { Router } from "express";
 
 const router = Router();
@@ -17,7 +16,7 @@ router.get('/proyectos',projectController.allProject)
     // Obteniendo el detalle de un proyecto espefico
 router.get('/proyecto/:id',projectController.projectById) 
     // Lista todas las habilidaddes del dev
-/* router.get('/habilidades',) */
+router.get('/habilidades',skillsController.allSkills)
     // Lista la experiencia laboral del desarrollador
 /* router.get('/experiencias',) */
     // Lista los enlaces de redes sociales del desarrollador
