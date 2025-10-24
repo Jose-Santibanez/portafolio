@@ -3,7 +3,7 @@ import { pool } from '../database/connection.js'
 const findAllUsers = async() =>{
     const query = 'select * from usuarios'
     const {rows} = await pool.query(query);
-    return rows[0]
+    return rows
 }
 
 const findUserById = async(id)=>{

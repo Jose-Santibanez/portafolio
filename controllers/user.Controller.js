@@ -19,9 +19,7 @@ const userById = async (req, res) => {
     try {
         const user = await userModel.findUserById(id);
         if (!user) {
-        return res
-            .status(404)
-            .json({ message: "Usuario no encontrado (no devuelve valor)" });
+        return res.status(404).json({ message: "Usuario no encontrado (no devuelve valor)" });
         }
         return res.json(user);
     } catch (e) {
