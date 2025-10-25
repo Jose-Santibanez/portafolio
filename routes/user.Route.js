@@ -3,6 +3,7 @@ import { projectController } from "../controllers/project.controller.js";
 import {skillsController} from '../controllers/skills.controller.js'
 import { experienceController  } from "../controllers/experience.controller.js";
 import { networksController } from '../controllers/networks.controller.js'
+import { educationController } from "../controllers/education.controller.js";
 import { Router } from "express";
 
 const router = Router();
@@ -24,7 +25,7 @@ router.get('/experiencias',experienceController.allExperience)
     // Lista los enlaces de redes sociales del desarrollador
 router.get('/redes',networksController.allNetworks) 
     // Lista la formación academica (educación) del desarrollador
-/* router.get('/educacion',) */
+router.get('/educacion',educationController.allEducation) 
 // POST
     // Envía un mensaje de contacto del desarrollador
 /* router.post('/',) */
