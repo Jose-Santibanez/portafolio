@@ -1,12 +1,14 @@
 import axios from 'axios'
 
-const API =  axios.create({
+export const API =  axios.create({
     baseURL: 'http://localhost:3000/api',
+    headers:{
+        "Content-Type": "application/json"
+    }
 })
 
-export const getUsuario = async (id) => {
+/* export const getUsuario = async (id) => {
     const {data} = await API.get(`/usuario/${id}`)
-    console.log(data)
     return data
 }
 export const proyectos = async () => {
@@ -32,4 +34,4 @@ export const redes = async () => {
 export const educacion = async () => {
     const { data } = await API.get('/educacion')
     return data
-}
+} */
