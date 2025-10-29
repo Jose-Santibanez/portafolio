@@ -1,3 +1,8 @@
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import HomePages from './pages/HomePages'
+import AdminPages from './pages/AdminPages'
 import { useState } from 'react'
 //import { getUsuario } from './services/api.js'
 import './App.css'
@@ -11,13 +16,13 @@ function App() {
 
 
   return (
-    <>
-      <div>
-     
-      </div>
+     <BrowserRouter > 
+        <Routes>
+            <Route path='/' element={<AdminPages/>}></Route>
+        </Routes>
+     </BrowserRouter>
        
-    </>
-  )
+    )
 }
 
 export default App
