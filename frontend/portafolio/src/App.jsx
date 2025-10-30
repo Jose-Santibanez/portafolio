@@ -1,11 +1,12 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import HomePages from './pages/HomePages'
-import AdminPages from './pages/AdminPages'
-import { useState } from 'react'
+
+
+
 //import { getUsuario } from './services/api.js'
 import './App.css'
+import HomePages from './pages/homepages'
 //import { useAxios } from './hooks/useFetchData.js'
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
   return (
      <BrowserRouter > 
         <Routes>
-            <Route path='/' element={<AdminPages/>}></Route>
+            <Route path='/' element={<HomePages/>}></Route>
         </Routes>
      </BrowserRouter>
        

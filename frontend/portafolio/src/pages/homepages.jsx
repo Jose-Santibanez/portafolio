@@ -1,7 +1,14 @@
+import Proyectos from "../components/sections/Proyectos"
 
 
 const HomePages =()=>{
-    return
+
+    return (
+            <Navbar/>
+    )
+
+
+
 }
 
 export default HomePages
