@@ -1,10 +1,19 @@
+import { useState } from "react"
+import { useAxios } from "../../hooks/useFetchData"
 
 const Hero  = ()=>{
+
+   
+    const {data: user, loading, error} = useAxios('/usuario/1');
+    
+    if(loading) return <p>Cargando Perfil...</p>
+    if(error) return <p>Error: {error}</p>
+
     
     return(
         <header>
-            <h1>Hola, soy <span>Nombre Apellido</span></h1>
-             <p class="subtitle">Desarrollador Web Full Stack</p>
+            <h1>Hola, soy <span>{user.nombre}</span></h1>
+             <p class="subtitle">{user.titulo_profesional}</p>
             <div>
            
         <a href="#" aria-label="LinkedIn" class="icon">
