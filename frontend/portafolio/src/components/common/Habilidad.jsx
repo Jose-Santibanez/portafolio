@@ -1,14 +1,12 @@
-import Habilidades from "../sections/Habilidades"
 
-
-const Habilidad = ()=>{
+const Habilidad = ({props})=>{
     
     return(
         <div className="skill-icon reveal">
             <img src="" alt="" />
-            <p></p>
+            <p>{props.nombre}</p>
         </div>
     )  
 }
 
-export default Habilidades
+export default Habilidad
