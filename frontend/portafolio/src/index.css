@@ -93,5 +93,11 @@ body{
 .social-links a{
   margin: 0 0.5em;
   color:var(--text-color);
+  transition: transform 0.3s, color 0.3s;
   
+}
+
+.social-links a:hover{
+  color: var(--primary);
+  /* transform: translateY(-2px); */
 }
