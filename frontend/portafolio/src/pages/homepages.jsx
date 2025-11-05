@@ -7,8 +7,11 @@ const HomePages =()=>{
     return (
         <>
             <Navbar/>
-            <Hero/>
-            <Habilidades/>
+            <main>
+                <Hero/>
+                <Habilidades/>
+            </main>
+            
         </>
                         
     )
