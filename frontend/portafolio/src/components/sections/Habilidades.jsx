@@ -4,6 +4,7 @@ import Habilidad from "../common/Habilidad"
  
 const Habilidades = () =>{
     const {data:skills,loading,error} = useAxios('/habilidades')
+    
     if(loading) return <p>Cargando Perfil</p>
     if(error) return <p>Error: {error}</p>
     
