@@ -8,8 +8,8 @@ const HomePages =()=>{
     return (
         <>
             <Navbar/>
-            <main>
-                <Hero/>
+            <Hero/>
+            <main>                
                 <Habilidades/>
                 <Proyectos/>
             </main>

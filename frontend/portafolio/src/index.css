@@ -15,8 +15,7 @@
     margin: 0 !important;
     padding: 0 !important;
     max-width: 100% !important;
-    display: flex;
-    flex-direction: column;
+    min-width: 400px !important;
 
    }
 /* Respectar prefers-color-scheme */
@@ -43,9 +42,9 @@ body{
 }
 
 main{
-   max-width: 960px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 ;
 }
 
 /*  Barra de navegación */
