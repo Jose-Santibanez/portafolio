@@ -6,7 +6,7 @@ const Habilidades = () =>{
     const {data:skills,loading,error} = useAxios('/habilidades')
     if(loading) return <p>Cargando Perfil</p>
     if(error) return <p>Error: {error}</p>
-    console.log(skills)
+    
     return(
         <section className="skills-section">
             <h2>Habilidades</h2>
