@@ -1,4 +1,5 @@
 import { useAxios } from "../../hooks/useFetchData"
+import Item from "../common/Item";
 
 
 const Experiencias = () =>{
@@ -12,7 +13,9 @@ const Experiencias = () =>{
         <section className="experience-section">
             <h2>Experiencia</h2>
             <div className="timeline">
-               {/*  {experiences.map()} */}
+                {experiences.map((experiences,index)=>(
+                    <Item props={experiences} index={index}/>
+                ))}
             </div>
         </section>
     )
