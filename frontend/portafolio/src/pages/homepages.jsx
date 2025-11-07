@@ -3,6 +3,7 @@ import Hero from "../components/sections/Hero"
 import Habilidades from "../components/sections/Habilidades"
 import Proyectos from "../components/sections/Proyectos"
 import Experiencias from "../components/sections/Experiencias"
+import Educacion from "../components/sections/Educacion"
 
 const HomePages =()=>{
 
@@ -14,6 +15,7 @@ const HomePages =()=>{
                 <Habilidades/>
                 <Proyectos/>
                 <Experiencias/>
+                <Educacion/>
             </main>
             
         </>

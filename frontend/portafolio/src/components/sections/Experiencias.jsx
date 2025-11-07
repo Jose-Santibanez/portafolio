@@ -14,7 +14,7 @@ const Experiencias = () =>{
             <h2>Experiencia</h2>
             <div className="timeline">
                 {experiences.map((experiences,index)=>(
-                    <Item props={experiences} index={index}/>
+                    <Item props={experiences} keys={index}/>
                 ))}
             </div>
         </section>
