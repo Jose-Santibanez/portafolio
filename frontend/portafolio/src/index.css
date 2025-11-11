@@ -213,54 +213,50 @@ main{
 
 /* Secciones de experiencias y educacion */
 
-.experience-section{
+.experience-section,
+.education-section {
   padding: 2em 1em;
 }
-
-.experience-section h2{
+.experience-section h2,
+.education-section h2 {
   text-align: center;
   margin-bottom: 1em;
 }
-
 .timeline {
   position: relative;
   margin: 2em 0;
   padding-left: 2em;
 }
-
-.timeline::before{
+.timeline::before {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
   left: 1em;
   width: 2px;
-  background-color: var(--primary);
+  background: var(--primary);
 }
-
-.timeline-item{
+.timeline-item {
   position: relative;
   margin-bottom: 2em;
   padding-left: 1.5em;
 }
-
-.timeline-item::before{
+.timeline-item::before {
   content: "";
   position: absolute;
   left: -0.5em;
-  top:0.3em;
+  top: 0.3em;
   width: 12px;
   height: 12px;
-  background-color: var(--primary);
-  border:2px solid var(--bg-color);
+  background: var(--primary);
+  border: 2px solid var(--bg-color);
   border-radius: 50%;
 }
-.timeline-item h3{
+.timeline-item h3 {
   margin: 0 0 0.25em;
   font-size: 1.1em;
 }
-
-.timeline-item span{
+.timeline-item span {
   display: block;
   font-size: 0.9em;
   margin-bottom: 0.5em;
@@ -270,4 +266,50 @@ main{
   margin: 0;
   font-size: 0.95em;
   line-height: 1.4;
+}
+
+
+
+/* Sección de contact */
+.contact-section{
+  padding: 2em 1em;
+  background: var(--hero-bg);
+}
+
+.contact-section h2{
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.contact-form{
+  max-width: 400px;
+  margin:0 auto;
+}
+.form-group{
+  margin-bottom: 1em;
+}
+
+.form-group label{
+  display: block;
+  margin-bottom: 0.3em;
+}
+.form-group input,
+.form-group textarea{
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #2d2d2d;
+  border-radius: 4px;
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.form-group textarea{
+  resize: vertical;
+}
+
+.contact-form .btn{
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
 }

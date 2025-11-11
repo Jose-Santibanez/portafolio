@@ -4,6 +4,8 @@ import Habilidades from "../components/sections/Habilidades"
 import Proyectos from "../components/sections/Proyectos"
 import Experiencias from "../components/sections/Experiencias"
 import Educacion from "../components/sections/Educacion"
+import Contacto from "../components/sections/Contacto"
+import Footer from "../components/common/Footer"
 
 const HomePages =()=>{
 
@@ -16,7 +18,10 @@ const HomePages =()=>{
                 <Proyectos/>
                 <Experiencias/>
                 <Educacion/>
+               
             </main>
+             <Contacto/>
+            <Footer/>
             
         </>
                         
