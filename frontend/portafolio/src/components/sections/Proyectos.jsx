@@ -10,7 +10,7 @@ const Proyectos =()=>{
     return(
         <section className="project-section">
             <h2>Proyectos</h2>
-            <div className="project-grid">
+            <div className="project-grid ">
                 {projects.map((project, index)=>(
                     <CardProyecto props={project} keys={index}/>
                 ))}
