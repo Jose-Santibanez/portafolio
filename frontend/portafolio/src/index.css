@@ -325,3 +325,17 @@ main{
   padding: 1em;
   font-size: 0.9em;
 }
+/* Animación de scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealAnim 0.6s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% 75%;
+}
+@keyframes revealAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
