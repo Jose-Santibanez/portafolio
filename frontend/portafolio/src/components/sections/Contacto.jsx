@@ -5,7 +5,7 @@ const Contacto =() =>{
             <h2>Contacto</h2>
             <form action=""className="contact-form">
                 <div className="form-group">
-                    <label>nombre</label>
+                    <label>Nombre</label>
                     <input type="text" />
                 </div>
                 <div className="form-group">
@@ -13,7 +13,7 @@ const Contacto =() =>{
                     <input type="text" />
                 </div>
                 <div className="form-group">
-                    <label>Mensaje</label>
+                    <label for="message">Mensaje</label>
                     <textarea id="message" rows={4} required></textarea>
                 </div>
                 <button className="btn">Enviar</button>
