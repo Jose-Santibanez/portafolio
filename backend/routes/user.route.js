@@ -5,6 +5,7 @@ import { experienceController  } from "../controllers/experience.controller.js";
 import { networksController } from '../controllers/networks.controller.js'
 import { educationController } from "../controllers/education.controller.js";
 import { Router } from "express";
+import { contactController } from "../controllers/contact.controller.js";
 
 const router = Router();
 
@@ -28,7 +29,7 @@ router.get('/redes',networksController.allNetworks)
 router.get('/educacion',educationController.allEducation) 
 // POST
     // Envía un mensaje de contacto del desarrollador
-/* router.post('/contacto',contactController.) */
+router.post('/contacto',contactController.insertContact)
 
 
 export default router;

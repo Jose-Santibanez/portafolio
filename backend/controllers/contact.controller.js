@@ -1,7 +1,7 @@
 import { contacModel } from "../models/contact.model.js";
-import { userModel } from "../models/user.model";
 
-const contact = async(req, res) =>{
+
+const insertContact = async(req, res) =>{
     const {nombre,email, mensaje} = req.body;
     const newContact ={
         nombre,
@@ -9,7 +9,7 @@ const contact = async(req, res) =>{
         mensaje
     }
     try{
-        let contact = await userModel.insertContact(newContact)
+        let contact = await contacModel.insertContact(newContact)
         return res.json(contact)
     } catch(e){
         console.log(e)
@@ -17,4 +17,4 @@ const contact = async(req, res) =>{
     }
 }
 
-export const contactController = { contact }
+export const contactController = { insertContact }
