@@ -28,7 +28,7 @@ router.get('/redes',networksController.allNetworks)
 router.get('/educacion',educationController.allEducation) 
 // POST
     // Envía un mensaje de contacto del desarrollador
-/* router.post('/',) */
+/* router.post('/contacto',contactController.) */
 
 
 export default router;
