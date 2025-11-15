@@ -16,4 +16,7 @@ const findUserById = async (id) => {
   return rows[0];
 };
 
+const login = async(usuario)=>{
+  const query = 'select * from usuarios where nombre= $1, email = $2 and password =$3 '
+}
 export const userModel = { findAllUsers, findUserById };
