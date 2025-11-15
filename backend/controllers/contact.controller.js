@@ -12,6 +12,9 @@ const contact = async(req, res) =>{
         let contact = await userModel.insertContact(newContact)
         return res.json(contact)
     } catch(e){
+        console.log(e)
         return res.status(500).json({message : "error en el servidor"})
     }
 }
+
+export const contactController = { contact }
