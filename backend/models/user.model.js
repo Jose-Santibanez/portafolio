@@ -17,6 +17,8 @@ const findUserById = async (id) => {
 };
 
 const login = async(usuario)=>{
-  const query = 'select * from usuarios where nombre= $1, email = $2 and password =$3 '
+  const query = 'select * from usuarios where nombre= $1, email = $2' // revisar sql tabla usuarios para login
+  const {rows} = await pool.query(query,[usuario]);
+  return rows[0];
 }
 export const userModel = { findAllUsers, findUserById };
