@@ -8,6 +8,7 @@ const insertContact = async(req, res) =>{
         email,
         mensaje
     }
+   
     try{
         let contact = await contacModel.insertContact(newContact)
         return res.json(contact)
