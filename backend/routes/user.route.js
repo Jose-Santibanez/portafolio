@@ -32,5 +32,5 @@ router.get('/educacion',educationController.allEducation)
 router.post('/contacto',contactController.insertContact)
 
 // Login
-/* router.post('/login',userController.login) */
+router.post('/login',userController.login)
 export default router;

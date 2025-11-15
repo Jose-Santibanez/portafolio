@@ -28,4 +28,20 @@ const userById = async (req, res) => {
     }
 };
 
-export const userController = { allUsers, userById };
+const login = async(req, res) =>{
+  const {nombre, email} = req.body;
+  const userLogeado = {
+    nombre,
+    email
+  }
+  try {
+    const user = await userModel.login(userLogeado)
+    return res.status(200).json({message: "usuario logeado",user})
+  } catch (e) {
+    console.log(e)
+    return res.status(500).json({messsage: 'Error interno del servidor'})
+  }
+
+}
+
+export const userController = { allUsers, userById, login };
