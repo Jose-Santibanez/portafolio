@@ -1,5 +1,5 @@
 import { userModel } from "../models/user.model.js";
-
+import jwt from 'jsonwebtoken'
 const allUsers = async (req, res) => {
   try {
     const users = await userModel.allUsers();
@@ -35,7 +35,7 @@ const login = async(req, res) =>{
     email
   }
   try {
-    const user = await userModel.validarLogin(userLogin)
+    const user = await userModel.validarLogin(loginUser)
 
     const token = jwt.sign(loginUser,"az_AZ", {expiresIn : 60})
 
