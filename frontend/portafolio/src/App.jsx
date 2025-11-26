@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //import { getUsuario } from './services/api.js'
 import './App.css'
-import HomePages from './pages/homepages'
+import HomePages from './pages/public/HomePages'
 //import { useAxios } from './hooks/useFetchData.js'
 
 function App() {
