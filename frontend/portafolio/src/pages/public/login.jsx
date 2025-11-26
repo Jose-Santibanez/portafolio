@@ -1,19 +1,7 @@
-import {useState, useRef } from 'react'
+import { useForm } from "react-hook-form"
 
 export const Login = ()=>{
-    const [ form , seTForm ] = useState({
-        email: "", 
-        contraseña : ""})
-    const [error, setErrors] = useState({});
-    const [loading, setLoading ] = useState(false);
-
-    const validate = ()=>{
-        const e = {}
-        if(!form.name.trim()) e.name = "ingresa Tu nombre";
-        if(!form.email.trim()) e.email = "Ingresa tu correo";
-
-        return e;
-    }
+  
     return (
       <dialog id='loginModal' className='modal'>
         <article className='modal-content'>
