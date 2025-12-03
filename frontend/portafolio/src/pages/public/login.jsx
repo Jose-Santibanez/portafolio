@@ -1,8 +1,8 @@
-import { useForm } from "react-hook-form"
-
+/* import { useForm } from "react-hook-form" */
+import ReactDOM from 'react-dom'
 export const Login = ()=>{
-  
-    return (
+
+    return ReactDOM.createPortal(
       <dialog id='loginModal' className='modal'>
         <article className='modal-content'>
 
@@ -42,6 +42,8 @@ export const Login = ()=>{
          </footer>
         </article>
         
-      </dialog>
+      </dialog>,
+      document.getElementById('modal-root')
+      
     ) 
 }

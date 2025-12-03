@@ -6,21 +6,20 @@ import Experiencias from "../../components/sections/Experiencias"
 import Educacion from "../../components/sections/Educacion"
 import Contacto from "../../components/sections/Contacto"
 import Footer from "../../components/common/Footer"
-import Login from "./Login"
+
 const HomePages =()=>{
 
     return (
         <>
-           <Login/>
-            <Navbar/>
+           
+            
             <Hero/>
-            <main>                
-                <Habilidades/>
-                <Proyectos/>
-                <Experiencias/>
-                <Educacion/>
-               
-            </main>
+                <main>                
+                    <Habilidades/>
+                    <Proyectos/>
+                    <Experiencias/>
+                    <Educacion/>
+                </main>
              <Contacto/>
             <Footer/>
             

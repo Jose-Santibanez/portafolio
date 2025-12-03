@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 
 
@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //import { getUsuario } from './services/api.js'
 import './App.css'
 import HomePages from './pages/public/HomePages'
+import { Login } from "./pages/public/login";
+import Navbar from "./components/common/Navbar";
 //import { useAxios } from './hooks/useFetchData.js'
 
 function App() {
@@ -16,11 +18,13 @@ function App() {
 
 
   return (
-     <BrowserRouter > 
-        <Routes>
+        <>
+        <Navbar/>
+        <Routes>   
             <Route path='/' element={<HomePages/>}></Route>
+            <Route path="/login" element={<Login/>}></Route>
         </Routes>
-     </BrowserRouter>
+        </>
        
     )
 }
