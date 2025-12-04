@@ -340,3 +340,22 @@ main{
     transform: translateY(0);
   }
 }
+ /* Superposición: Capa Superpuesta sobre el Nodo Principal del documento*/
+.modal-overlay{
+  position: fixed; /* se posiciona respecto al viewPort, sin importal el scroll y permanece siempre en la misma position */
+  /* dejamos valor en cero para estirar y ocupar todo el espacio del contenedor, top y bottom fijan la distancias verticales y right y left las distancias horizontales */
+   top:0;
+  left:0;
+  right:0;
+  bottom: 0;
+  /* para definir como se comportan/organizan los elementos hijos de forma flexible */
+  display: flex; /* flex por defecto despliega los hijos en columnas (un caja bajo la otra) */
+  /* podemos usar las siguientes propiedades para manejar los hijos flexibles */
+  justify-content: center; /*por defecto se justifica de izauierda a derecha, este caso se ajusta al centro <--> */
+
+  align-items: center /*por defecto es de arriba hacia abajo, este caso al centro*/;
+  background: rgba(0, 0, 0, 0.7);
+
+
+  
+}

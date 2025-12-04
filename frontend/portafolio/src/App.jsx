@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-
+import { useState } from "react";
 
 
 
@@ -11,6 +11,9 @@ import Navbar from "./components/common/Navbar";
 //import { useAxios } from './hooks/useFetchData.js'
 
 function App() {
+
+    const [ open , setOpen ] = useState(false);
+
 /* const {data:user, loading, error } = useAxios('/usuario/1') 
 
   if(loading) return <p>Cargando Perfil...</p>;
@@ -19,10 +22,14 @@ function App() {
 
   return (
         <>
-        <Navbar/>
+        <Navbar onLoginClick={()=>setOpen(true)}/>
+        {
+            open && (
+                {}
+            )
+        }
         <Routes>   
             <Route path='/' element={<HomePages/>}></Route>
-            <Route path="/login" element={<Login/>}></Route>
         </Routes>
         </>
        
