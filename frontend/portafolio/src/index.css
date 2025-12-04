@@ -356,7 +356,7 @@ main{
   align-items: center /*por defecto es de arriba hacia abajo, este caso al centro*/;
   background: rgba(0, 0, 0, 0.7);
 
-  /*  */
+  /* falta */
 }
 
 /* Contenedor del Modal */
@@ -380,7 +380,7 @@ main{
   max-width: 400px;
   color: white
 
-/*  */
+/* falta */
 
 }
  
@@ -410,6 +410,19 @@ main{
   border-radius: 8px;
   color: white;
   font-size: 16px;
-  /*  */
+  /*  falta */
 }
 
+/* Estilos al bton SUBMIT */
+.submit-button{
+  background: linear-gradient(135deg, #00bcd4, #00e5ff); /* Degradado moderno */ ;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  /* falta */
+
+}
