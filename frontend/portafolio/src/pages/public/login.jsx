@@ -1,49 +1,57 @@
 /* import { useForm } from "react-hook-form" */
 import ReactDOM from 'react-dom'
-export const Login = ()=>{
+import { useEffect } from 'react';
 
+const modalRoot = document.getElementById('modal-root');
+const Login = ({ onClose })=>{
+const el = document.createElement('div');
+useEffect(() => {
+    modalRoot.appendChild(el);
+    return () => {
+      modalRoot.removeChild(el);
+    };
+  }, [el]);
     return ReactDOM.createPortal(
-      <dialog id='loginModal' className='modal'>
-        <article className='modal-content'>
-
-          <header className='modal-header'>
-              <h2>Login</h2>
-              <button className='close-btn' aria-label='Cerrar'>X</button>
-          </header>
-          
-          <section className='modal-body'>
-             <form className='login-form'>
-                <div className='form-group'>
-                  <label htmlFor="email">Correo electrónico</label>
-                  <input type="email"
-                         id="email"
-                         placeholder='Ejemplo@ejemplo.cl'
-                         required />                       
-                </div>
-                <div className='form-group'>
-                  <label htmlFor="password">Contraseña</label>
-                  <input type="password"
-                         id="password"
-                         placeholder='*******'
-                         required />                 
-                </div>
-
-                <button type='submit' className='login-btn'>
-                  Ingresar
-                </button>
-                
-             </form>
-          </section>
-         
-         <footer className='modal-footer'>
-            <p>
-               ¿No tienes cuenta? <a href="#">Regístrate aquí</a>
-            </p>
-         </footer>
-        </article>
+   <div className="modal-overlay" >
+      <div 
+        className="modal-content" 
+        role="dialog" 
+        aria-modal="true" 
+        aria-labelledby="login-modal-title"
+      >
+        <button 
+          className="close-button" 
+           
+          aria-label="Cerrar ventana de inicio de sesión"
+        >
+          &times;
+        </button>
         
-      </dialog>,
-      document.getElementById('modal-root')
-      
-    ) 
-}
+        <h2 id="login-modal-title">Iniciar Sesión</h2>
+        
+        <form className="login-form">
+          <input 
+            className="input-field" 
+            type="email" 
+            placeholder="Correo Electrónico" 
+            required
+            aria-label="Correo Electrónico"
+          />
+          <input 
+            className="input-field" 
+            type="password" 
+            placeholder="Contraseña" 
+            required
+            aria-label="Contraseña"
+          />
+          <button className="submit-button" type="submit">
+            Acceder
+          </button>
+        </form>
+      </div>
+    </div>,
+    el
+  );
+};
+
+export default Login;

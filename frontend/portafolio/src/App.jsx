@@ -6,7 +6,7 @@ import { useState } from "react";
 //import { getUsuario } from './services/api.js'
 import './App.css'
 import HomePages from './pages/public/HomePages'
-import { Login } from "./pages/public/login";
+import Login  from "./pages/public/login";
 import Navbar from "./components/common/Navbar";
 //import { useAxios } from './hooks/useFetchData.js'
 
@@ -25,7 +25,7 @@ function App() {
         <Navbar onLoginClick={()=>setOpen(true)}/>
         {
             open && (
-                {}
+                <Login onClose={()=>setOpen(false)}/>
             )
         }
         <Routes>   
