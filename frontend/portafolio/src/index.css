@@ -356,7 +356,7 @@ main{
   align-items: center /*por defecto es de arriba hacia abajo, este caso al centro*/;
   background: rgba(0, 0, 0, 0.7);
 
-  /* falta */
+  animation: fadeIn 0.3s ease-out;
 }
 
 /* Contenedor del Modal */
@@ -378,9 +378,8 @@ main{
   padding: 40px;
   width: 90%;
   max-width: 400px;
-  color: white
-
-/* falta */
+  color: white;
+  animation: slideDown 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
 
 }
  
@@ -410,7 +409,7 @@ main{
   border-radius: 8px;
   color: white;
   font-size: 16px;
-  /*  falta */
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 /* Estilos al bton SUBMIT */
@@ -423,7 +422,7 @@ main{
   cursor: pointer;
   font-weight: bold;
   font-size: 18px;
-  /* falta */
+  transition: 0.2s, box-shadow 0.2s;
 
 }
 
@@ -448,4 +447,16 @@ main{
 }
 .close-button:hover{
   opacity: 1;
+}
+
+/* Animación del modal Login */
+
+@keyframes fadeIn {
+  from {  opacity: 0; }
+  to {  opacity: 1; }  
+}
+
+@keyframes sliceDown {
+  from { transform:translateY(-50px); opacity: 0;}
+  to { transform: translateY(0); opacity: 1;}
 }
