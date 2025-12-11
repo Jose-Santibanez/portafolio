@@ -5,19 +5,24 @@ import { useEffect } from 'react';
 const modalRoot = document.getElementById('modal-root');
 const Login = ({ onClose })=>{
 const el = document.createElement('div');
+
+
 useEffect(() => {
     modalRoot.appendChild(el);
     return () => {
       modalRoot.removeChild(el);
     };
   }, [el]);
+
     return ReactDOM.createPortal(
-   <div className="modal-overlay" >
+
+   <div className="modal-overlay" onClick={onClose}>
       <div 
         className="modal-content" 
         role="dialog" 
         aria-modal="true" 
         aria-labelledby="login-modal-title"
+        onClick={(e)=>{e.stopPropagation()}}
       >
         <button 
           className="close-button" 
@@ -50,7 +55,7 @@ useEffect(() => {
         </form>
       </div>
     </div>,
-    el
+    el 
   );
 };
 
