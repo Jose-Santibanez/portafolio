@@ -21,7 +21,7 @@ useEffect(() => {
       >
         <button 
           className="close-button" 
-           
+          onClick={onClose}
           aria-label="Cerrar ventana de inicio de sesión"
         >
           &times;
