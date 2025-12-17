@@ -7,11 +7,9 @@ const findAllUsers = async () => {
 };
 
 const findUserById = async (id) => {
-  const query = "select * from usuarios where $1";
+  const query = "select * from usuarios u join perfil_usuarios pu on u.id = pu.usuario_id where u.id = $1";
   // rows array de conexiones descruturado dentro de lo que devuelve la peticion(consulta) asincrona
-  const { rows } = await pool.query(query, [
-    id,
-  ]); /* pool.query(variable que guarda la consulta, [parametros]) */
+  const { rows } = await pool.query(query, [id]); /* pool.query(variable que guarda la consulta, [parametros]) */
 
   return rows[0];
 };

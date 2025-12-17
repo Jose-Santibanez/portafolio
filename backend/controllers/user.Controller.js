@@ -2,7 +2,7 @@ import { userModel } from "../models/user.model.js";
 import jwt from 'jsonwebtoken'
 const allUsers = async (req, res) => {
   try {
-    const users = await userModel.allUsers();
+    const users = await userModel.findAllUsers();
     if (!users) {
       return res.status(404).json({ messsage: "usuarios no encontrados" });
     }
