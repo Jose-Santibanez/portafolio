@@ -12,7 +12,7 @@ const Hero  = ()=>{
     
     return(
         <header className="hero">
-            <h1>Hola, soy <span>{user.nombre}</span></h1>
+            <h1>Hola, soy <span>{user.nombre_completo}</span></h1>
              <p className="subtitle">{user.titulo_profesional}</p>
             <div className="social-links">
            
