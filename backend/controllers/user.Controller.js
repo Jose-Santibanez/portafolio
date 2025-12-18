@@ -1,3 +1,4 @@
+import e from "express";
 import { userModel } from "../models/user.model.js";
 import jwt from 'jsonwebtoken'
 const allUsers = async (req, res) => {
@@ -28,6 +29,15 @@ const userById = async (req, res) => {
     }
 };
 
+const registrar = async( req, res) =>{
+  const {email} = req.body;
+ 
+  const infoUsuario  =  await userModel.registrarUsuario(email)
+  
+  return res.status(200).json({message:'usuario registrado',infoUsuario})
+}
+
+
 const login = async(req, res) =>{
   const {email, password} = req.body;
   const loginUser = {
@@ -49,4 +59,7 @@ const login = async(req, res) =>{
 
 }
 
-export const userController = { allUsers, userById, login };
+
+
+
+export const userController = { allUsers, userById, login, registrar};

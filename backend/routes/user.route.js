@@ -31,6 +31,10 @@ router.get('/educacion',educationController.allEducation)
     // Envía un mensaje de contacto del desarrollador
 router.post('/contacto',contactController.insertContact)
 
+// Register
+router.post('/register',userController.registrar)
+
 // Login
 router.post('/login',userController.login)
+
 export default router;

@@ -20,4 +20,13 @@ const validarLogin = async(usuario)=>{
   console.log(rows)
   return rows[0];
 }
-export const userModel = { findAllUsers, findUserById, validarLogin };
+
+const registrarUsuario = async(perfilUsuario) =>{
+  const query = 'insert into usuarios(email) values ($1) returning *' 
+  console.log(perfilUsuario)
+  const {rows} = await pool.query(query,[perfilUsuario])
+  console.log(rows)
+  return rows[0]
+}
+export const userModel = { findAllUsers, findUserById, validarLogin, registrarUsuario };
+
