@@ -30,12 +30,14 @@ const userById = async (req, res) => {
 };
 
 const registrar = async( req, res) =>{
-  const {email} = req.body;
- 
-  const infoUsuario  =  await userModel.registrarUsuario(email)
+  const {email, nombres, apellidos, pass} = req.body;
+  const perfil = {nombres, apellidos}
+  const infoUsuario  =  await userModel.registrarUsuario(email,perfil, pass)
   
   return res.status(200).json({message:'usuario registrado',infoUsuario})
 }
+
+
 
 
 const login = async(req, res) =>{

@@ -21,10 +21,14 @@ const validarLogin = async(usuario)=>{
   return rows[0];
 }
 
-const registrarUsuario = async(perfilUsuario) =>{
-  const query = 'insert into usuarios(email) values ($1) returning *' 
-  console.log(perfilUsuario)
-  const {rows} = await pool.query(query,[perfilUsuario])
+const registrarUsuario = async(email, perfil, pass) =>{
+  const queryUser = 'insert into usuarios(email) values ($1) returning id' 
+  const insertarUsuario = await pool.query(queryUser,[email])
+  const idPerfil = insertarUsuario.rows[0].id;
+
+  const insertarPerfil = `insert into perfil_usuarios(usuario_id,primer_nombre,segundo_nombre) values( $1, $2, $3)`
+
+  const { rows } = await pool.query(insertarPerfil,[idPerfil,perfil.nombres, perfil.apellidos])
   console.log(rows)
   return rows[0]
 }
