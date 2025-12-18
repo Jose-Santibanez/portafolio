@@ -15,8 +15,9 @@ const findUserById = async (id) => {
 };
 
 const validarLogin = async(usuario)=>{
-  const query = 'select * from usuarios where nombre= $1 and email = $2' // revisar sql tabla usuarios para login
-  const rows = await pool.query(query,[usuario.nombre, usuario.email]);
+  const query = 'select u.email from usuarios u join credenciales cr on u.id = cr.usuario_id  where u.email = $1 and cr.password_hash = $2' // revisar sql tabla usuarios para login
+  const { rows } = await pool.query(query,[usuario.email, usuario.password]);
+  console.log(rows)
   return rows[0];
 }
 export const userModel = { findAllUsers, findUserById, validarLogin };

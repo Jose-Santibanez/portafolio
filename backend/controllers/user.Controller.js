@@ -29,17 +29,19 @@ const userById = async (req, res) => {
 };
 
 const login = async(req, res) =>{
-  const {nombre, email} = req.body;
+  const {email, password} = req.body;
   const loginUser = {
-    nombre,
-    email
+    email,
+    password
   }
+  
   try {
     const user = await userModel.validarLogin(loginUser)
+    
+   /*  const token = jwt.sign(loginUser,"az_AZ", {expiresIn : 60}) */
 
-    const token = jwt.sign(loginUser,"az_AZ", {expiresIn : 60})
-
-    return res.status(200).json({message: "usuario logeado",token,user})
+    /* return res.status(200).json({message: "usuario logeado",token,user}) */
+    return res.status(200).json({message: "usuario logeado",user})
   } catch (e) {
     console.log(e)
     return res.status(500).json({messsage: 'Error interno del servidor'})
