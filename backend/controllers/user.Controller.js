@@ -1,6 +1,8 @@
 import e from "express";
 import { userModel } from "../models/user.model.js";
 import jwt from 'jsonwebtoken'
+
+// trae todos los usuarios
 const allUsers = async (req, res) => {
   try {
     const users = await userModel.findAllUsers();
@@ -14,6 +16,7 @@ const allUsers = async (req, res) => {
   }
 };
 
+//  Buscar por ID
 const userById = async (req, res) => {
     const { id } = req.params;
 
@@ -29,17 +32,20 @@ const userById = async (req, res) => {
     }
 };
 
+
+// Registro
 const registrar = async( req, res) =>{
-  const {email, nombres, apellidos, pass} = req.body;
-  const perfil = {nombres, apellidos}
-  const infoUsuario  =  await userModel.registrarUsuario(email,perfil, pass)
+  const {email, nombres, apellidos, password} = req.body;
+  const perfil = {email,nombres, apellidos,password}
+  
+  const infoUsuario  =  await userModel.registrarUsuario(perfil)
   
   return res.status(200).json({message:'usuario registrado',infoUsuario})
 }
 
 
 
-
+// Login
 const login = async(req, res) =>{
   const {email, password} = req.body;
   const loginUser = {
