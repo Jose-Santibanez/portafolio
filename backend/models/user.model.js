@@ -21,16 +21,22 @@ const validarLogin = async(usuario)=>{
   return rows[0];
 }
 
-const registrarUsuario = async(email, perfil, pass) =>{
+const registrarUsuario = async(usuario) =>{
   const queryUser = 'insert into usuarios(email) values ($1) returning id' 
-  const insertarUsuario = await pool.query(queryUser,[email])
-  const idPerfil = insertarUsuario.rows[0].id;
+  const insertarUsuario = await pool.query(queryUser,[usuario.email])
+  const idUsuario = insertarUsuario.rows[0].id;
+  /* console.log(insertarUsuario.rows[0]) */
+  const queryPerfil = `insert into perfil_usuarios(usuario_id,primer_nombre,segundo_nombre) values( $1, $2, $3) returning usuario_id`
+  
+  const insertarPerfil = await pool.query(queryPerfil,[idUsuario,usuario.nombres, usuario.apellidos])
+ /*  console.log(insertarPerfil.rows[0]) */
 
-  const insertarPerfil = `insert into perfil_usuarios(usuario_id,primer_nombre,segundo_nombre) values( $1, $2, $3)`
+  const queryCredenciales = `insert into credenciales(usuario_id, password_hash) values ($1, $2) returning *`
+  
+  const insertarCredenciales = await pool.query(queryCredenciales,[idUsuario,usuario.password])
+/*  console.log(insertarCredenciales.rows[0]) */
 
-  const { rows } = await pool.query(insertarPerfil,[idPerfil,perfil.nombres, perfil.apellidos])
-  console.log(rows)
-  return rows[0]
+ /*  return rows[0] */
 }
 export const userModel = { findAllUsers, findUserById, validarLogin, registrarUsuario };
 
