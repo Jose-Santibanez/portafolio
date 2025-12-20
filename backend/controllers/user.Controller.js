@@ -1,6 +1,7 @@
 import e from "express";
 import { userModel } from "../models/user.model.js";
 import jwt from 'jsonwebtoken'
+import bcrypt from "bcryptjs";
 
 // trae todos los usuarios
 const allUsers = async (req, res) => {
@@ -32,15 +33,24 @@ const userById = async (req, res) => {
     }
 };
 
-
 // Registro
 const registrar = async( req, res) =>{
   const {email, nombres, apellidos, password} = req.body;
-  const perfil = {email,nombres, apellidos,password}
+
+  const perfil = {
+    email,
+    nombres, 
+    apellidos,
+    password: bcrypt.hashSync(password.toString(), 10),
+  }
   
-  const infoUsuario  =  await userModel.registrarUsuario(perfil)
-  
-  return res.status(200).json({message:'usuario registrado',infoUsuario})
+  try{
+      const infoUsuario  =  await userModel.registrarUsuario(perfil)    
+      return res.status(201).json({message:'usuario creado',infoUsuario})
+
+    }catch(e){
+      return res.status(500).json({message: "Error interno del servidor"}) 
+  }
 }
 
 
